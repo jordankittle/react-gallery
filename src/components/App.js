@@ -19,6 +19,9 @@ class App extends Component {
 	}
 	
 	handleSearch = (query = 'cats') => {
+    this.setState({
+      loading: true
+    });
 		const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&privacy_filter=1&per_page=24&format=json&nojsoncallback=1`;
 		fetch(url)
 		.then ( response => response.json())
@@ -56,11 +59,11 @@ class App extends Component {
           <SearchForm />
           <Nav />
           <Switch>
-            <Route exact path="/" render={ ({match}) => <PhotoContainer match={match} query ="cats" images={this.state.images} handleSearch={this.handleSearch} />} />
-            <Route path="/cats" render={ ({match}) => <PhotoContainer match={match} query ="cats" images={this.state.images} handleSearch={this.handleSearch} />} />
-            <Route path="/dogs" render={ ({match}) => <PhotoContainer match={match} query="dogs" images={this.state.images} handleSearch={this.handleSearch} />} />
-            <Route path="/birds" render={ ({match}) => <PhotoContainer match={match} query="birds" images={this.state.images} handleSearch={this.handleSearch} />} />
-            <Route path="/search/:query" render={ ({match}) => <PhotoContainer match={match} query={match.params.query} images={this.state.images} handleSearch={this.handleSearch} />} />
+            <Route exact path="/" render={ ({match}) => <PhotoContainer match={match} query ="cats" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
+            <Route path="/cats" render={ ({match}) => <PhotoContainer match={match} query ="cats" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading}  />} />
+            <Route path="/dogs" render={ ({match}) => <PhotoContainer match={match} query="dogs" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
+            <Route path="/birds" render={ ({match}) => <PhotoContainer match={match} query="birds" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
+            <Route path="/search/:query" render={ ({match}) => <PhotoContainer match={match} query={match.params.query} images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
             <Route component={ NotFound } />
           </Switch>
         </div>

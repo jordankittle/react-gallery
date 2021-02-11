@@ -11,6 +11,7 @@ class SearchForm extends Component {
     this.setState({ searchText: e.target.value });
   }
   
+  //Push new url to history to keep good browsing experience intact. Forward/Back buttons will work
   handleSubmit = e => {
     e.preventDefault();
     this.props.history.push(`/search/${this.state.searchText}`);

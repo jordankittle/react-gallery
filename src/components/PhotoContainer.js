@@ -7,7 +7,7 @@ class PhotoContainer extends Component {
 		this.props.handleSearch(this.props.query);  
 		console.log('PhotoContainer mounted');
 	}
-
+	// Check if url has changed and fetch new data if so
 	componentDidUpdate(prevProps) {
     if (this.props.match.url !== prevProps.match.url) {
       this.props.handleSearch(this.props.query);
@@ -18,7 +18,10 @@ class PhotoContainer extends Component {
 
 		return(
             <div className="photo-container">
-            <h2>Results</h2>
+			{this.props.loading ?
+				<h2 className="loading">Loading...</h2> :
+           		<h2>{this.props.query}</h2>
+			}
             <ul>
 				{
 					this.props.images.map((image, index) => {
@@ -26,6 +29,7 @@ class PhotoContainer extends Component {
 					})
 				}
             </ul>
+			
           </div>
 		);
 	}

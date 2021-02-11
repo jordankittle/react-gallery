@@ -10,6 +10,10 @@ h2 {
   text-transform: capitalize;
 }
 
+h2.loading {
+  text-align: center;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
