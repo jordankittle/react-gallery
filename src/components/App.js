@@ -17,7 +17,11 @@ function App() {
         <SearchForm />
         <Nav />
         <Switch>
-          <Route exact path="/" component={ PhotoContainer } />
+          <Route exact path="/" render={ () => <PhotoContainer query ="cats" />} />
+          <Route exact path="/cats" render={ () => <PhotoContainer query ="cats" />} />
+          <Route exact path="/dogs" render={ () => <PhotoContainer query="dogs" />} />
+          <Route exact path="/computers" render={ () => <PhotoContainer query="computers" />} />
+          <Route path="/search/:query" render={ ({match}) => <PhotoContainer query={match.params.query} />} />
           <Route component={ NotFound } />
         </Switch>
       </div>
