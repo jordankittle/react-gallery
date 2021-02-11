@@ -63,6 +63,7 @@ class App extends Component {
             <Route path="/cats" render={ ({match}) => <PhotoContainer match={match} query ="cats" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading}  />} />
             <Route path="/dogs" render={ ({match}) => <PhotoContainer match={match} query="dogs" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
             <Route path="/birds" render={ ({match}) => <PhotoContainer match={match} query="birds" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
+            <Route exact path ="/search" render={ ({match}) => <PhotoContainer match={match} query="" images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} searchPage="true"  />} />
             <Route path="/search/:query" render={ ({match}) => <PhotoContainer match={match} query={match.params.query} images={this.state.images} handleSearch={this.handleSearch} loading={this.state.loading} />} />
             <Route component={ NotFound } />
           </Switch>

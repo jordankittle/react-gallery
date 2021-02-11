@@ -20,11 +20,13 @@ class PhotoContainer extends Component {
 		return(
             <div className="photo-container">
 			{	
-				this.props.loading ?
-					<h2 className="loading">Loading...</h2> :
-					this.props.images.length > 0 ?
-           				<h2>{this.props.query}</h2> :
-						<h2>No Images Found</h2>
+				this.props.searchPage ?
+					<h2>Please Enter Search Query</h2> :
+					this.props.loading ?
+						<h2 className="loading">Loading...</h2> :
+						this.props.images.length > 0 ?
+							<h2>{this.props.query}</h2> :
+							<h2>No Images Found</h2>
 			}
             <ul>
 				{
