@@ -1,5 +1,5 @@
 # React Gallery - Jordan Kittle's Treehouse FSJS Techdegree Project 7
-This is a project for Treehouse's Full Stack JavaScript Techdegree that will use React to create an image gallery.
+This is a project for Treehouse's Full Stack JavaScript Techdegree that will use React to create an image gallery. Please note you will need to add your own config.js file with Flikr apiKey in the src folder. 
 
 
 # Getting Started with Create React App
