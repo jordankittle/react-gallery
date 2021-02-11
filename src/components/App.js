@@ -1,11 +1,12 @@
 import '../css/index.css';
+import SearchForm from './SearchForm';
 
 function App() {
-  return (
-    <div className="App">
-      <p className="test">Hello World</p>
-    </div>
-  );
+	return (
+		<div className="container">
+			<SearchForm />
+		</div>
+	);
 }
 
 export default App;
