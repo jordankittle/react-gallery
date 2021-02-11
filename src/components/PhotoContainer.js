@@ -15,8 +15,7 @@ class PhotoContainer extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-
-        if (this.props.match.path !== prevProps.match.path) {
+        if (this.props.match.url !== prevProps.match.url) {
             this.handleSearch(this.props.query);
         }
     }

@@ -24,9 +24,9 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path="/" render={ ({match}) => <PhotoContainer query ="cats" apiKey={apiKey} match={match} />} />
-            <Route exact path="/cats" render={ ({match}) => <PhotoContainer query ="cats" apiKey={apiKey} match={match} />} />
-            <Route exact path="/dogs" render={ ({match}) => <PhotoContainer query="dogs" apiKey={apiKey} match={match} />} />
-            <Route exact path="/birds" render={ ({match}) => <PhotoContainer query="birds" apiKey={apiKey} match={match} />} />
+            <Route path="/cats" render={ ({match}) => <PhotoContainer query ="cats" apiKey={apiKey} match={match} />} />
+            <Route path="/dogs" render={ ({match}) => <PhotoContainer query="dogs" apiKey={apiKey} match={match} />} />
+            <Route path="/birds" render={ ({match}) => <PhotoContainer query="birds" apiKey={apiKey} match={match} />} />
             <Route path="/search/:query" render={ ({match}) => <PhotoContainer query={match.params.query} apiKey={apiKey} match={match} />} />
             <Route component={ NotFound } />
           </Switch>
