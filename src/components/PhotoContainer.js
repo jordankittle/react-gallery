@@ -5,14 +5,12 @@ class PhotoContainer extends Component {
 
 	componentDidMount(){
 		this.props.handleSearch(this.props.query);  
-		console.log('PhotoContainer mounted');
 	}
 	// Check if url has changed and fetch new data if so
 	componentDidUpdate(prevProps) {
     if (this.props.match.url !== prevProps.match.url) {
       this.props.handleSearch(this.props.query);
 	}
-	console.log(this.props.images.length)
   }
 	
 	render() {
@@ -30,7 +28,7 @@ class PhotoContainer extends Component {
 			}
             <ul>
 				{
-					this.props.images.map((image, index) => {
+					this.props.images.map(image => {
 						return <Photo url={image.url} alt={image.alt} key={image.id} />
 					})
 				}
